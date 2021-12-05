@@ -80,6 +80,7 @@ export default {
             localStorage.removeItem('captcha')
             localStorage.removeItem('attemps')
             this.aciertoMsg = 'Enhorabuena has conseguido logarte'
+            this.error= '',
             this.acierto = true;
 
           }).catch((error) => {

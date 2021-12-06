@@ -12,7 +12,7 @@ npm run build
 ```
 Este proyecto está realizado en Vue.js.
 Para hacerlo funcionar hay que tener instalado node.js en
-el ordenador. 
+el ordenador. Hay que ejecutar primero la parte Back-end.
 Se instalan las dependencias y se ejecuta.
 
 Se ejecuta por defecto en el puerto 8080.

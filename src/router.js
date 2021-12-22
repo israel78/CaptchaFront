@@ -20,7 +20,7 @@ export default new Router({
     {
       path: '/inicio',
       name: 'inicio',
-      component: () => import(/* webpackChunkName: "about" */ './views/Inicio.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
     }
   ]
 })

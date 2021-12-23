@@ -56,7 +56,7 @@ axios.defaults.headers =  {'Authorization': '123456'
   , 'accept': 'application/json'
   ,'Access-Control-Allow-Origin': '*'
   ,'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS'}
-axios.defaults.baseURL='http://13.37.203.189/api/captcha'
+axios.defaults.baseURL='https://captchaback.herokuapp.com/api/captcha'
 export default {
   name: 'admin',
   data:() => ({

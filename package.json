@@ -2,9 +2,9 @@
   "name": "Crud-firebase-udemy",
   "version": "0.1.0",
   "private": true,
-  "main": "app.js",
   "scripts": {
-    "start": "vue-cli-service start",
+    "postinstall": "npm run build",
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },

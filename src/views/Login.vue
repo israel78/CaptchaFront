@@ -54,9 +54,8 @@ import router from "../router";
 axios.defaults.withCredentials = true
 axios.defaults.headers =  {'Authorization': '123456'
   , 'accept': 'application/json'
-  ,'Access-Control-Allow-Origin': 'https://captcha-front.herokuapp.com'
+  ,'Access-Control-Allow-Origin': '*'
   ,'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS'}
-axios.defaults.baseURL='https://captchaback.herokuapp.com/api/captcha'
 axios.defaults.baseURL='https://captchaback.herokuapp.com/api/captcha'
 //axios.defaults.baseURL='http://localhost:8082/api/captcha'
 export default {

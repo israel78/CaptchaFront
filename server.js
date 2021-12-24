@@ -2,7 +2,7 @@ const express = require("express");
 const port = process.env.PORT || 8080;
 const app = express();
 const sessions = require('express-session')
-const cors = require('express-cors')
+const cors = require('cors')
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const oneDay = 1000 * 60 * 60 * 24;

@@ -6,10 +6,14 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(sessions({
-    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false
+    secret: 'wow very secret',
+    cookie: {
+        maxAge: 600000,
+        secure: true
+    },
+    saveUninitialized: false,
+    resave: false,
+    unset: 'destroy'
 }));
 app.use(express.static(__dirname + "/dist/"));
 app.get(/.*/, function(req, res) {

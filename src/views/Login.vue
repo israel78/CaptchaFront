@@ -96,6 +96,7 @@ export default {
             }
         )
       } else{
+        this.intentosMax = localStorage.getItem('attemps')
         this.error = "Captcha no correcto"
         this.intentos = this.intentos+1;
       }

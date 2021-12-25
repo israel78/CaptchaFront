@@ -75,25 +75,30 @@ export default {
   methods:{
     ...mapActions(['getCaptcha']),
     procesarFormulario() {
-      axios
-          .post('/app/login'
-              , {'firstName': this.name, 'passw': this.pass, 'captcha': this.captchaIn}
-          )
-          .then(response => {
-            localStorage.removeItem('captcha')
-            localStorage.removeItem('attemps')
-            this.aciertoMsg = 'Enhorabuena has conseguido logarte'
-            this.error= '',
-            this.acierto = true;
 
-          }).catch((error) => {
-            if(error. response) {
-              this.intentosMax = localStorage.getItem('attemps')
-              this.error = error.response.data.value
-              this.intentos = error.response.data.key
+      if (this.captchaIn == localStorage.getItem('captcha')) {
+        axios
+            .post('/app/loginwithoutsession'
+                , {'firstName': this.name, 'passw': this.pass}
+            )
+            .then(response => {
+              localStorage.removeItem('captcha')
+              localStorage.removeItem('attemps')
+              this.aciertoMsg = 'Enhorabuena has conseguido logarte'
+              this.error = '',
+                  this.acierto = true;
+            }).catch((error) => {
+              if (error.response) {
+                this.intentosMax = localStorage.getItem('attemps')
+                this.error = error.response.data.value
+                this.intentos = error.response.data.key
+              }
             }
-          }
-      )
+        )
+      } else{
+        this.error = "Captcha no correcto"
+        this.intentos = this.intentos+1;
+      }
     },
     resetPage(){
       localStorage.removeItem('captcha')

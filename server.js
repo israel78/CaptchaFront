@@ -18,7 +18,7 @@ app.use(sessions({
 }));
 
 app.use(cors({
-    origin:['https://captchaback.herokuapp.com','https:localhost:8080'],
+    origin:['https:localhost:8080'],
     methods:['GET','POST'],
     credentials: true // enable set cookie
 }));
